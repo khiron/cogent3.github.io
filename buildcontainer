@@ -1,0 +1,16 @@
+FROM python:3.8
+
+# Install web server
+RUN apt-get update && apt-get install -y nginx git
+
+# Set up work directory
+WORKDIR /app
+
+# Copy the build script
+COPY build_docs.py /app/
+
+# Expose port for web server
+EXPOSE 80
+
+# Command to start the server (update with actual command)
+CMD ["nginx", "-g", "daemon off;"]

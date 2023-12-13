@@ -1,0 +1,9 @@
+{
+    "label": "Build and Serve Documentation",
+    "type": "shell",
+    "command": "docker build -t cogent3-doc ./buildcontainer && docker run -p 8000:80 -v ../cogent3.github.io:/c3org -v ../cogent3:/c3src cogent3-doc",
+    "group": {
+        "kind": "build",
+        "isDefault": true
+    }
+}
